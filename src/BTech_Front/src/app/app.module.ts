@@ -22,6 +22,9 @@ import { SearchComponent } from './core/components/search/search.component';
 import { LoginComponent } from './core/components/login/login.component';
 import { AuthService } from './services/auth/auth.service';
 import { CartService } from './services/cart/cart.service';
+import { PaymentPageComponent } from './core/components/payment-page/payment-page.component';
+import { SuccessPaymentComponent } from './core/components/success-payment/success-payment.component';
+import { NgxPayPalModule } from 'ngx-paypal';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,8 @@ import { CartService } from './services/cart/cart.service';
     ProductPageComponent,
     SearchComponent,
     LoginComponent,
+    PaymentPageComponent,
+    SuccessPaymentComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +51,7 @@ import { CartService } from './services/cart/cart.service';
     CommonModule,
     HttpClientModule,
     FormsModule,
+    NgxPayPalModule
   ],
   providers: [AuthService, CartService],
   bootstrap: [AppComponent]

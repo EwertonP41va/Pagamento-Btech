@@ -5,8 +5,10 @@ import { SacComponent } from './core/components/sac/sac.component';
 import { CartComponent } from './core/components/cart/cart.component';
 import { SearchComponent } from './core/components/search/search.component';
 import { LoginComponent } from './core/components/login/login.component';
-import { AuthGuard } from './guard/authGuard';
+import { AuthGuard } from './Guard/AuthGuard';
 import { ProductPageComponent } from './core/components/product-page/product-page.component';
+import { PaymentPageComponent } from './core/components/payment-page/payment-page.component';
+import { SuccessPaymentComponent } from './core/components/success-payment/success-payment.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -16,6 +18,8 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent},
   { path: 'login', component: LoginComponent},
   { path: 'page', component: ProductPageComponent},
+  { path: 'payment', component: PaymentPageComponent, canActivate: [AuthGuard] },
+  { path: 'success', component: SuccessPaymentComponent },
 ];
 
 @NgModule({
